@@ -11,7 +11,7 @@ def forecast_revenue(display_prospecting, display_retargeting, display_retention
 st.set_page_config(layout="centered")
 
 # Title of the app
-st.title("Scenario Modeling")
+st.title("Scenario Modeling: New Buyers")
 
 # Initial data for the table
 initial_data = {
@@ -60,20 +60,20 @@ with col3:
     st.plotly_chart(create_pie_chart("Scenario 3", show_legend=False))
 
 # Display the updated table (only the forecast row)
-st.header("Forecasted Revenue")
+st.header("Forecasted New Buyers")
 st.table(forecast_df)
 
 # Create a bar plot for the forecasted revenue
 bar_data = {
     "Scenario": ["Scenario 1", "Scenario 2", "Scenario 3"],
-    "Forecasted Revenue": [
+    "Forecasted New Buyers": [
         forecast_df.loc[0, "Scenario 1"],
         forecast_df.loc[0, "Scenario 2"],
         forecast_df.loc[0, "Scenario 3"]
     ]
 }
 bar_df = pd.DataFrame(bar_data)
-bar_fig = px.bar(bar_df, x="Scenario", y="Forecasted Revenue", title="", text="Forecasted Revenue")
+bar_fig = px.bar(bar_df, x="Scenario", y="Forecasted New Buyers", title="", text="Forecasted New Buyers")
 
 # Update the layout to display the y-axis values on the plot and remove the x-label
 bar_fig.update_traces(texttemplate='%{text:.0f}', textposition='outside')
