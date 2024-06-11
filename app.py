@@ -11,14 +11,14 @@ def forecast_revenue(display_prospecting, display_retargeting, display_retention
 st.set_page_config(layout="centered")
 
 # Title of the app
-st.title("Media Spend and Revenue Forecast")
+st.title("Scenario Modeling")
 
 # Initial data for the table
 initial_data = {
     "Media Type": ["Display Prospecting", "Display Retargeting", "Display Retention", "Native", "OLV", "CTV"],
-    "Scenario 1": [1000, 1000, 1000, 1000, 1000, 1000],
-    "Scenario 2": [1100, 1100, 1100, 1100, 1100, 1100],
-    "Scenario 3": [900, 900, 900, 900, 900, 900]
+    "Scenario 1": [1000, 2000, 500, 1000, 1000, 1000],
+    "Scenario 2": [1100, 1200, 400, 1100, 2100, 100],
+    "Scenario 3": [900, 800, 200, 3000, 900, 1800]
 }
 
 # Create a DataFrame from the initial data
@@ -30,7 +30,6 @@ edited_df = st.experimental_data_editor(df, use_container_width=True)
 
 # Calculate the forecasted revenue based on the edited values
 forecast_data = {
-    "Media Type": ["Forecasted Revenue"],
     "Scenario 1": [round(forecast_revenue(edited_df.loc[0, "Scenario 1"], edited_df.loc[1, "Scenario 1"], edited_df.loc[2, "Scenario 1"], edited_df.loc[3, "Scenario 1"], edited_df.loc[4, "Scenario 1"], edited_df.loc[5, "Scenario 1"]))],
     "Scenario 2": [round(forecast_revenue(edited_df.loc[0, "Scenario 2"], edited_df.loc[1, "Scenario 2"], edited_df.loc[2, "Scenario 2"], edited_df.loc[3, "Scenario 2"], edited_df.loc[4, "Scenario 2"], edited_df.loc[5, "Scenario 2"]))],
     "Scenario 3": [round(forecast_revenue(edited_df.loc[0, "Scenario 3"], edited_df.loc[1, "Scenario 3"], edited_df.loc[2, "Scenario 3"], edited_df.loc[3, "Scenario 3"], edited_df.loc[4, "Scenario 3"], edited_df.loc[5, "Scenario 3"]))]
@@ -74,7 +73,7 @@ bar_data = {
     ]
 }
 bar_df = pd.DataFrame(bar_data)
-bar_fig = px.bar(bar_df, x="Scenario", y="Forecasted Revenue", title="Forecasted Revenue by Scenario", text="Forecasted Revenue")
+bar_fig = px.bar(bar_df, x="Scenario", y="Forecasted Revenue", title="", text="Forecasted Revenue")
 
 # Update the layout to display the y-axis values on the plot and remove the x-label
 bar_fig.update_traces(texttemplate='%{text:.0f}', textposition='outside')
