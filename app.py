@@ -58,7 +58,7 @@ with col1:
 with col2:
     st.plotly_chart(create_pie_chart("Scenario 2", show_legend=False))
 with col3:
-    st.plotly_chart(create_pie_chart("Scenario 3", show_legend=True))
+    st.plotly_chart(create_pie_chart("Scenario 3", show_legend=False))
 
 # Display the updated table (only the forecast row)
 st.header("Forecasted Revenue")
