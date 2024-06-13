@@ -28,7 +28,7 @@ with col1:
             'Awareness Weight': [0.25, 0.45, 0.35, 0.65, 0.2]
         }
         df = pd.DataFrame(data)
-        edited_df = st.data_editor(df)
+        edited_df = st.experimental_data_editor(df)
 
     with col1b:
         # Add a pie chart based on the channel budget
