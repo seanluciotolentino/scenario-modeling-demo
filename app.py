@@ -18,7 +18,7 @@ col1, col2 = st.columns([2, 2])  # Adjust the width ratio to make the right colu
 with col1:
     st.title("Scenario Modeling: Awareness")
 
-    col1a, col1b = st.columns([2.1, 1])  # Adjust the width ratio to make the right column bigger
+    col1a, col1b = st.columns([2.4, 1])  # Adjust the width ratio to make the right column bigger
     with col1a:
         st.subheader("Model Parameters")
         data = {
@@ -39,8 +39,8 @@ with col1:
             height=300,
             margin=dict(l=20, r=20, t=20, b=20),
             legend=dict(
-                x=0.3,
-                y=-2,
+                x=0.1,
+                y=-1,
                 traceorder='normal',
                 bgcolor='rgba(0,0,0,0)',
                 bordercolor='rgba(0,0,0,0)'
