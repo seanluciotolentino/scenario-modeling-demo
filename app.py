@@ -40,7 +40,7 @@ with col1:
             margin=dict(l=20, r=20, t=20, b=20),
             legend=dict(
                 x=0.3,
-                y=-3,
+                y=-2,
                 traceorder='normal',
                 bgcolor='rgba(0,0,0,0)',
                 bordercolor='rgba(0,0,0,0)'
